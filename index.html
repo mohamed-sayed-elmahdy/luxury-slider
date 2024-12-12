@@ -57,12 +57,12 @@
           </h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            adipisicing elit. Eveniet, illum!
+            adipisicing elit. 
           </p>
-          <button>
+          <button class="open-form-btn" onclick="openForm()">
             Get It Now <span><i class="fa-thin fa-plus"></i></span>
           </button>
-          <button class="playIcon"><i class="fa-solid fa-play"></i></button>
+          <button class="playIcon" class="open-video-btn" onclick="openVideo()"><i class="fa-solid fa-play"></i></button>
         </div>
       </div>
     </div>
@@ -85,7 +85,33 @@
         <i class="fas fa-phone"></i>
       </div>
     </div>
-
+         <!-- Form Popup content -->
+         <div class="form-popup"  id="formPopup">
+          <span class="close-btn" onclick="closeForm()">×</span>
+          <h1>To receive a commercial offer, fill in the details below</h1>
+          <form>
+              <div class="input-group">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" required>
+              </div>
+              <div class="input-group">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="input-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+              <button type="submit" class="submit-btn">Get Offer +</button>
+          </form>
+      </div>
+      
+      <!-- Video Popup -->
+      <div class="video-popup" id="videoPopup">
+        <span class="close-btn" onclick="closeVideo()">×</span>
+        <iframe id="videoIframe" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

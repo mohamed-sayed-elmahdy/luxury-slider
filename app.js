@@ -39,9 +39,6 @@ window.onresize = function(event) {
 };
 
 
-
-
-
 // Corner Video
 const videoContainer = document.querySelector('.video-container');
 const video = document.getElementById('video');
@@ -82,5 +79,31 @@ minusbutton.addEventListener('click', (e) => {
 function toggleIcons() {
     const button = document.querySelector('.floating-button');
     button.classList.toggle('open');
+  }
+  
+
+  
+// Form Popup
+function openForm() {
+    document.getElementById('formPopup').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Disable scrolling
+  }
+  
+  function closeForm() {
+    document.getElementById('formPopup').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Enable scrolling
+  }
+  
+  // Video Popup
+  function openVideo() {
+    const videoUrl = 'https://www.youtube.com/embed/VIDEO_ID'; 
+    document.getElementById('videoIframe').src = videoUrl;
+    document.getElementById('videoPopup').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Disable scrolling
+  }
+  function closeVideo() {
+    document.getElementById('videoPopup').style.display = 'none';
+    document.getElementById('videoIframe').src = ''; // Stop video
+    document.body.style.overflow = 'auto'; // Enable scrolling
   }
   
