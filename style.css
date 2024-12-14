@@ -12,6 +12,9 @@ body {
   align-items: center;
   overflow: hidden;
 }
+a {
+  text-decoration: none;
+}
 .slider {
   width: 1350px;
   max-width: 100vw;
