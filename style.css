@@ -551,50 +551,61 @@ body {
   }
 }
 
-/* Popup Styles */
-/* .form-popup,
+/* video popup */
 .video-popup {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   z-index: 9999;
   justify-content: center;
   align-items: center;
-  transition: 1s all ease;
-} */
-/* .form-popup form {
-  border-radius: 12px;
-  background: linear-gradient(145deg, #1e1e1e, #292929);
-  box-shadow: 5px 5px 10px #0f0f0f, -5px -5px 10px #2b2b2b;
-} */
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.8s all ease;
+  display: flex;
+} 
+.video-popup.show {
+  opacity: 1;
+  visibility: visible; 
+}
 
-/* .form-content,
 .video-popup iframe {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-} */
-
-/* .close-btn {
+} 
+.video-popup  .close-btn {
+  border: none;
+  font-weight: bold;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
+  top: 25px;
+  right: 45px;
+  background: none;
+  border: 1px solid white;
   color: white;
+  font-size: 28px;
   cursor: pointer;
-} */
-
-/* Video Popup */
-/* .video-popup iframe {
-  max-width: 90%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.3s all ease;
+  z-index: 100;
+}
+ .video-popup iframe {
+  max-width: 92%;
   max-height: 90%;
   border-radius: 10px;
-}  */
+} 
+.video-popup .close-btn:hover {
+  background: white;
+  color: #000;
+}
 
+
+/* Form Popup */
 .form.popup {
   position: fixed;
   top: 0;
@@ -607,7 +618,8 @@ body {
   align-items: center;
   flex-direction: column;
   color: white;
-gap: 5px;
+  gap: 5px;
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
@@ -618,6 +630,7 @@ gap: 5px;
   color: #68737dda;
   font-size: 15px;
   font-weight: 400;
+  padding: 0 2rem;
 }
 .form.popup.show {
   opacity: 1;
@@ -627,12 +640,11 @@ gap: 5px;
   background: linear-gradient(
     145.4deg,
     hsla(0, 0%, 36%, 0.95) 2.02%,
-    hsla(0, 0%, 9%,1) 34.36%
+    hsla(0, 0%, 9%, 1) 34.36%
   );
   padding: 80px;
   border-radius: 25px;
   text-align: center;
-  width: 90%;
   max-width: 950px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   color: white;
@@ -641,22 +653,22 @@ gap: 5px;
 .form.popup .popup-content h2 {
   margin: 0 0 3rem;
   font-size: 35px;
+  text-transform: capitalize;
 }
-.form.popup .popup-content  form  {
+.form.popup .popup-content form {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-flex-direction: column;
+  flex-direction: column;
 }
-.form.popup .popup-content  form .inputsContainer {
+.form.popup .popup-content form .inputsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:25px;
-
+  gap: 25px;
 }
-.form.popup .popup-content  form .inputsContainer div {
+.form.popup .popup-content form .inputsContainer div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -673,7 +685,7 @@ flex-direction: column;
   outline: none;
   border: none;
 }
-.form.popup .popup-content  form .inputsContainer div label span {
+.form.popup .popup-content form .inputsContainer div label span {
   color: blue;
 }
 .form.popup .popup-content .submitButton {
@@ -691,10 +703,10 @@ flex-direction: column;
   border: none;
   font-weight: bold;
   position: absolute;
-  top: 105px;
-  right: 70px;
+  top: 25px;
+  right: 45px;
   background: none;
-  border: none;
+  border: 1px solid white;
   color: white;
   font-size: 28px;
   cursor: pointer;
@@ -702,6 +714,7 @@ flex-direction: column;
   height: 40px;
   border-radius: 50%;
   transition: 0.3s all ease;
+  z-index: 100;
 }
 
 .form.popup .close-btn:hover {
@@ -709,8 +722,45 @@ flex-direction: column;
   color: #000;
 }
 @media screen and (max-width: 768px) {
-
+  .form.popup {
+    padding: 0px 30px;
+  }
   .form.popup .popup-content {
-    
+    padding: 40px 30px;
+    margin-top: 8rem;
+  }
+  .form.popup .close-btn {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+  .form.popup .popup-content form .inputsContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form.popup .popup-content form .inputsContainer div {
+    width: 100%;
+  }
+  .form.popup .popup-content h2 {
+    margin: 0 0 3rem;
+    font-size: 25px;
+    width: 100%;
+  }
+  .video-popup  .close-btn {
+    border: none;
+    font-weight: bold;
+    position: absolute;
+    top: 85px;
+    right: 25px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.3s all ease;
+    z-index: 100;
   }
 }

@@ -89,9 +89,6 @@ minusbutton.addEventListener('click', (e) => {
 
 // Form Popup
 const popup = document.getElementById("popup");
-
-
-
 function openForm() {
   popup.classList.add("show");
     document.body.style.overflow = 'hidden'; // Disable scrolling
@@ -109,11 +106,12 @@ function openForm() {
   function openVideo() {
     const videoUrl = 'https://www.youtube.com/embed/VIDEO_ID'; 
     document.getElementById('videoIframe').src = videoUrl;
-    document.getElementById('videoPopup').style.display = 'flex';
+    document.getElementById('videoPopup').classList.add("show");
     document.body.style.overflow = 'hidden'; // Disable scrolling
+    console.log("jjuhoi")
   }
   function closeVideo() {
-    document.getElementById('videoPopup').style.display = 'none';
+    document.getElementById('videoPopup').classList.remove("show");
     document.getElementById('videoIframe').src = ''; // Stop video
     document.body.style.overflow = 'auto'; // Enable scrolling
   }
