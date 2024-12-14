@@ -605,11 +605,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  flex-direction: column;
+  color: white;
+gap: 5px;
   visibility: hidden;
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
-
+.form.popup .bottomText {
+  max-width: 950px;
+  text-align: center;
+  margin-top: 10px;
+  color: #68737d;
+}
 .form.popup.show {
   opacity: 1;
   visibility: visible;
