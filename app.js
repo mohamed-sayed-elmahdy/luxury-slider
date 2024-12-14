@@ -75,24 +75,35 @@ minusbutton.addEventListener('click', (e) => {
 
 
 // Corner Plus
-
-function toggleIcons() {
+  function toggleIcons(event) {
+    event.preventDefault();
     const button = document.querySelector('.floating-button');
     button.classList.toggle('open');
   }
   
-
+  function handleLinkClick(event) {
+    event.stopPropagation();
+    console.log('Link clicked:', event.currentTarget.href);
+  }
   
+
 // Form Popup
+const popup = document.getElementById("popup");
+
+
+
 function openForm() {
-    document.getElementById('formPopup').style.display = 'flex';
+  popup.classList.add("show");
     document.body.style.overflow = 'hidden'; // Disable scrolling
   }
   
   function closeForm() {
-    document.getElementById('formPopup').style.display = 'none';
+    popup.classList.remove("show");
     document.body.style.overflow = 'auto'; // Enable scrolling
   }
+  
+
+
   
   // Video Popup
   function openVideo() {
