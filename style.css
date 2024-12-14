@@ -615,13 +615,14 @@ gap: 5px;
   max-width: 950px;
   text-align: center;
   margin-top: 10px;
-  color: #68737d;
+  color: #68737dda;
+  font-size: 15px;
+  font-weight: 400;
 }
 .form.popup.show {
   opacity: 1;
   visibility: visible;
 }
-
 .form.popup .popup-content {
   background: linear-gradient(
     145.4deg,
@@ -639,7 +640,7 @@ gap: 5px;
 
 .form.popup .popup-content h2 {
   margin: 0 0 3rem;
-  font-size: 25px;
+  font-size: 35px;
 }
 .form.popup .popup-content  form  {
   display: flex;
@@ -652,7 +653,8 @@ flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap:25px;
+
 }
 .form.popup .popup-content  form .inputsContainer div {
   display: flex;
@@ -660,14 +662,20 @@ flex-direction: column;
   align-items: center;
   flex-direction: column;
   gap: 2px;
-
+  border-bottom: 1px solid white;
+  min-width: 200px;
 }
-.form.popup .popup-content input,
-.form.popup .popup-content button {
+.form.popup .popup-content input {
   margin: 10px 0;
   color: white;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  border: none;
 }
-
+.form.popup .popup-content  form .inputsContainer div label span {
+  color: blue;
+}
 .form.popup .popup-content .submitButton {
   background: linear-gradient(90deg, #aa61fc, #ff99c8);
   border: none;
