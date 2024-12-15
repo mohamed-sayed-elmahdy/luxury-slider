@@ -116,3 +116,12 @@ function openForm() {
     document.body.style.overflow = 'auto'; // Enable scrolling
   }
   
+
+  const text = document.querySelector('.slider .contentContainer .textAndFormButton .playIcon h3');
+text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+const element = document.querySelectorAll('.slider .contentContainer .textAndFormButton .playIcon h3 span');
+for(let i = 0; i < element.length; i++){
+    element[i].style.transform = "rotate("+i*20+"deg)";
+}
+

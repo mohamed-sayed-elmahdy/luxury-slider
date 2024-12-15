@@ -134,7 +134,7 @@ a {
   font-size: 24px;
 }
 
-.slider .contentContainer .textAndFormButton button span {
+.slider .contentContainer .textAndFormButton .open-form-btn span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,9 +148,37 @@ a {
   font-size: 25px;
   background: linear-gradient(180deg, #f7ecffd8, #e0befab3);
 }
-.slider .contentContainer .textAndFormButton button:hover span {
+.slider .contentContainer .textAndFormButton .open-form-btn:hover span {
   background: linear-gradient(180deg, #c579ff, #e6c6ff);
 }
+.slider .contentContainer .textAndFormButton .playIcon h3 {
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  user-select: none;
+  pointer-events: none;
+  animation: Rotation 5s linear infinite;
+  top: 50%;
+  left: 50%;
+}
+.slider .contentContainer .textAndFormButton .playIcon h3 span{
+  position: absolute;
+  top: -50px;
+  text-transform: uppercase;
+  display: inline-block;
+  transform-origin: 0 50px;
+}
+@keyframes Rotation{
+  0%
+  {
+     transform: rotate(360deg); 
+  }
+  100%
+  {
+      transform: rotate(0deg);
+  }
+}
+
 .slider .buttons {
   position: absolute;
   top: 55%;
@@ -262,14 +290,14 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
-    margin-top: 0.7rem;
+    gap: 30px;
+    margin-top: 1.6rem;
     width: 100%;
   }
   .slider .contentContainer .textAndFormButton .buttons-Container .playIcon {
-    position: static;
-    right: 220px;
-    bottom: 60px;
+    position: relative;
+    right: 0;
+    bottom: 0;
     border: 1px solid white;
     padding: 10px;
     width: 50px;
@@ -279,6 +307,11 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+  }
+  .slider .contentContainer .textAndFormButton .buttons-Container .playIcon h3 span {
+    top: -40px;
+    transform-origin: 0 40px;
+    font-size: 10px;
   }
   .slider .contentContainer .textAndFormButton button {
     background: transparent;
@@ -768,3 +801,6 @@ a {
     z-index: 100;
   }
 }
+
+
+
