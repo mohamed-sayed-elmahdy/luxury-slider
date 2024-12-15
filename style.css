@@ -767,6 +767,38 @@ a {
   background: white;
   color: #000;
 }
+.form.popup .open-form-btn {
+  background: transparent;
+  border-radius: 25px;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 5px 5px 20px;
+  font-size: 18px;
+  align-self: center;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+}
+.form.popup .open-form-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  color: black;
+  padding: 5px;
+  font-size: 25px;
+  background: linear-gradient(180deg, #f7ecffd8, #e0befab3);
+}
+.form.popup .open-form-btn:hover span {
+  background: linear-gradient(180deg, #c579ff, #e6c6ff);
+}
 @media screen and (max-width: 768px) {
   .form.popup {
     padding: 0px 30px;
