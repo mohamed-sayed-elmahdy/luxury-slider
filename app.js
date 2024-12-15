@@ -108,12 +108,15 @@ function closeVideo() {
   document.body.style.overflow = "auto"; // Enable scrolling
 }
 
-const text = document.querySelector(".text");
-text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
-
-const element = document.querySelectorAll(
-  ".slider .contentContainer .textAndFormButton .playIcon h4 span"
+const texts = document.querySelectorAll(
+  ".slider .contentContainer .textAndFormButton .buttons-Container .playIcon h4"
 );
-for (let i = 0; i < element.length; i++) {
-  element[i].style.transform = "rotate(" + i * 20 + "deg)";
-}
+
+texts.forEach((text) => {
+  text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+  const elements = text.querySelectorAll("span");
+  elements.forEach((element, index) => {
+    element.style.transform = "rotate(" + index * 20 + "deg)";
+  });
+});
