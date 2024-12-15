@@ -134,7 +134,7 @@ a {
   font-size: 24px;
 }
 
-.slider .contentContainer .textAndFormButton button span {
+.slider .contentContainer .textAndFormButton .open-form-btn span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,9 +148,35 @@ a {
   font-size: 25px;
   background: linear-gradient(180deg, #f7ecffd8, #e0befab3);
 }
-.slider .contentContainer .textAndFormButton button:hover span {
+.slider .contentContainer .textAndFormButton .open-form-btn:hover span {
   background: linear-gradient(180deg, #c579ff, #e6c6ff);
 }
+
+.slider .contentContainer .textAndFormButton .playIcon h4 {
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  user-select: none;
+  pointer-events: none;
+  animation: Rotation 5s linear infinite;
+}
+
+.slider .contentContainer .textAndFormButton .playIcon h4 span {
+  position: absolute;
+  top: -50px;
+  text-transform: uppercase;
+  display: inline-block;
+  transform-origin: 0 50px;
+}
+@keyframes Rotation {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .slider .buttons {
   position: absolute;
   top: 55%;
@@ -262,14 +288,14 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
-    margin-top: 0.7rem;
+    gap: 30px;
+    margin-top: 1.9rem;
     width: 100%;
   }
   .slider .contentContainer .textAndFormButton .buttons-Container .playIcon {
-    position: static;
-    right: 220px;
-    bottom: 60px;
+    position: relative;
+    right: 0px;
+    bottom: 0px;
     border: 1px solid white;
     padding: 10px;
     width: 50px;
@@ -279,6 +305,13 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+  }
+  .slider .contentContainer .textAndFormButton .playIcon h4 span {
+    position: absolute;
+    top: -40px;
+    text-transform: uppercase;
+    display: inline-block;
+    transform-origin: 0 40px;
   }
   .slider .contentContainer .textAndFormButton button {
     background: transparent;
@@ -570,18 +603,18 @@ a {
   visibility: hidden;
   transition: 0.8s all ease;
   display: flex;
-} 
+}
 .video-popup.show {
   opacity: 1;
-  visibility: visible; 
+  visibility: visible;
 }
 
 .video-popup iframe {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-} 
-.video-popup  .close-btn {
+}
+.video-popup .close-btn {
   border: none;
   font-weight: bold;
   position: absolute;
@@ -598,16 +631,15 @@ a {
   transition: 0.3s all ease;
   z-index: 100;
 }
- .video-popup iframe {
+.video-popup iframe {
   max-width: 92%;
   max-height: 90%;
   border-radius: 10px;
-} 
+}
 .video-popup .close-btn:hover {
   background: white;
   color: #000;
 }
-
 
 /* Form Popup */
 .form.popup {
@@ -750,7 +782,7 @@ a {
     font-size: 25px;
     width: 100%;
   }
-  .video-popup  .close-btn {
+  .video-popup .close-btn {
     border: none;
     font-weight: bold;
     position: absolute;
